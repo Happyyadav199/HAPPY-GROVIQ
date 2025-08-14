@@ -1,0 +1,12 @@
+workflows:
+  build:
+    name: Build release APK
+    instance_type: standard
+    environment:
+      flutter: "3.16.5"
+    scripts:
+      - flutter clean
+      - flutter pub get
+      - flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
